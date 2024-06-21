@@ -9,7 +9,7 @@ const db = require("./db");
 const AuthRouter = require("./Controllers/AuthController");
 
 const corsOptions = {
-  origin: "https://octalogic-frontend.vercel.app",
+  origin: process.env.CORS_ORIGIN,
   optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
