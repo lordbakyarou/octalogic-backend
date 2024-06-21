@@ -10,10 +10,11 @@ const AuthRouter = require("./Controllers/AuthController");
 
 //middlewares
 const corsOptions = {
-  origin: process.env.CORS_ORIGIN, // Replace with your frontend's origin
+  origin: "*", // Replace with your frontend's origin
   optionsSuccessStatus: 200,
   credentials: true,
 };
+
 app.use(cors(corsOptions));
 
 //Express
