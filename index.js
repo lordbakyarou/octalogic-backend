@@ -12,9 +12,14 @@ const AuthRouter = require("./Controllers/AuthController");
 const corsOptions = {
   origin: "https://octalogic-frontend.vercel.app",
   optionsSuccessStatus: 200,
+  credentials: true,
 };
 
 app.use(cors(corsOptions));
+
+// Handle preflight requests for all routes
+app.options("*", cors(corsOptions));
+
 app.use(express.urlencoded({ extended: true }));
 
 //Express
