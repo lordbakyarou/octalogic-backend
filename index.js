@@ -8,18 +8,14 @@ const PORT = process.env.PORT || 9001;
 const db = require("./db");
 const AuthRouter = require("./Controllers/AuthController");
 
-//middlewares
 const corsOptions = {
-  origin: "*", // Replace with your frontend's origin
-  optionsSuccessStatus: 200,
-  credentials: true,
+  origin: process.env.CORS_ORIGIN,
 };
-
-app.use(cors());
+app.use(cors(corsOptions));
 
 //Express
-
 app.use(express.json());
+app.use(express.urlencoded({ extends: true }));
 
 app.get("/check", (req, res) => {
   return res.send("WOrking");
