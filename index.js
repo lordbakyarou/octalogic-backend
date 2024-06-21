@@ -9,13 +9,14 @@ const db = require("./db");
 const AuthRouter = require("./Controllers/AuthController");
 
 const corsOptions = {
-  origin: process.env.CORS_ORIGIN,
+  origin: "https://octalogic-frontend.vercel.app",
+  optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
+app.use(express.urlencoded({ extended: true }));
 
 //Express
 app.use(express.json());
-app.use(express.urlencoded({ extends: true }));
 
 app.get("/check", (req, res) => {
   return res.send("WOrking");
