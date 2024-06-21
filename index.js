@@ -16,6 +16,8 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 
+//Express
+
 app.use(express.json());
 
 app.get("/check", (req, res) => {
