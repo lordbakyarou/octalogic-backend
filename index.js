@@ -10,9 +10,10 @@ const db = require("./db");
 const AuthRouter = require("./Controllers/AuthController");
 
 const corsOptions = {
-  origin: process.env.CORS_ORIGIN,
+  origin: process.env.CORS_ORIGIN.toString(),
   optionsSuccessStatus: 200,
 };
+
 app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: true }));
 
